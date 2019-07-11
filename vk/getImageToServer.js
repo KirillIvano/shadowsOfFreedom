@@ -9,7 +9,7 @@ const addImage = async function(url, id){
         encoding: null
     });
     return new Promise(function(resolve){
-        fs.writeFile(__dirname + `./../images/${id}.jpg`, file, (err)=>{console.log(err);resolve(err);});
+        fs.writeFile(__dirname + `/../images/${id}.jpg`, file, (err)=>{console.log(err);resolve(err);});
     });
 };
 
