@@ -57,7 +57,6 @@ const startLongpolling = async function(groupId){
                 const vkId = item.object.from_id;
                 let message = '';
                 const admin = await getAdminFromDatabase(vkId);
-                console.log(admin);
                 if (admin){
                     if (item.object.text==='вернуться'){
                         admin.state = 'init';
