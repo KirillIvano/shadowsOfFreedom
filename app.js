@@ -16,6 +16,10 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 require('./vk/vkLifeCycle');
 
 app.use('/api', api);
+
+app.use('/', function(req, res){
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 process.addListener('disconnect', function(err){
     console.log(err);
 });
