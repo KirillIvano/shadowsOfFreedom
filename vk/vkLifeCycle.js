@@ -9,6 +9,7 @@ const albumsHandler = require('./handlers/albumsHandler');
 const announcesHandler = require('./handlers/announcesHandler');
 const goodsHandler = require('./handlers/goodsHandler');
 
+
 const getServerInfo = async function(groupId){
     const data = await getLongPoll({group_id: groupId});
     const parsedData = JSON.parse(data);
@@ -56,6 +57,7 @@ const startLongpolling = async function(groupId){
                 const vkId = item.object.from_id;
                 let message = '';
                 const admin = await getAdminFromDatabase(vkId);
+                console.log(admin);
                 if (admin){
                     if (item.object.text==='вернуться'){
                         admin.state = 'init';
