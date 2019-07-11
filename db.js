@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require("./models.js");
-let dbURI = 'mongodb://127.0.0.1:27017/database';
+let dbURI = 'mongodb://127.0.0.1:27017/ss';
 
 
 if (process.env.NODE_ENV==="production"){

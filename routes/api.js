@@ -1,14 +1,18 @@
 const router = require('express').Router();
+const albums = require('./../databaseFunctions/albums');
+const announces = require('./../databaseFunctions/announces');
+const goods = require('./../databaseFunctions/goods');
 
-router.post('callback', function(req, res){
-    if (req.body){
-        if (req.body.type==='confirmation'){
-            res.status(200);
-            res.send('7437ea3d');
-            return;
-        }
-        res.status(200);
-        res.send('ok');
-    }
+router.get('/getAlbums', async function(req, res){
+    res.send(await albums.getAll());
 });
+
+router.get('/getAnnounces', async function(req, res){
+    res.send(await announces.getAll());
+});
+
+router.get('/getGoods', async function(req, res){
+    res.send(await goods.getAll());
+});
+
 module.exports = router;
