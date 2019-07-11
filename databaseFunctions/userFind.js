@@ -25,11 +25,6 @@ const createAdminFinder = function(){
         get: async (id)=>{
             const cacheResult = getFromCache(id);
             if (!cacheResult){
-                await addToDataBase({
-                    "state": "init",
-                    "log": "",
-                    "id": 55409958
-                });
                 const doc = await getFromDataBase(id);
                 if(!doc){
                     return;
