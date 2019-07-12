@@ -1,6 +1,6 @@
 const request = require('request-promise-native');
 const vkReturner = require('../vk/VkAPIReturner');
-const api = new vkReturner.vkClass('community', '696f32599c2e92e4fd6fb3913b54b98214b42ad727a0055642a22a94db8c855a84aa1c804809a98bf7c72');
+const api = new vkReturner.vkClass('community', process.env.VK_TOKEN);
 const getLongPoll = api.createMethod('groups.getLongPollServer');
 const send = api.createMethod('messages.send');
 const getAdminFromDatabase = require('./../databaseFunctions/userFind')().get;

@@ -40,6 +40,7 @@ module.exports.handleApprove = function(admin, item){
 
     const album = albumsManager.create();
     album.songs = admin.album.songs;
+    album.image = admin.album.image;
     album.name = admin.album.name;
     album.id = admin.album.id;
     album.save();

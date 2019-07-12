@@ -38,6 +38,7 @@ module.exports.handleApprove = function(admin, item){
     const good = goodsManager.create();
     good.price = admin.good.price;
     good.name = admin.good.name;
+    good.image = admin.good.image;
     good.id = admin.good.id;
     good.save();
 

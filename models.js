@@ -4,6 +4,7 @@ const Good = mongoose.Schema({
     id: Number,
     name: String,
     price: Number,
+    image: String
 });
 
 const Announce = mongoose.Schema({
@@ -17,6 +18,7 @@ const Album = mongoose.Schema({
     id: Number,
     name: String,
     songs: [String],
+    image: String
 });
 
 const Admin = mongoose.Schema({
